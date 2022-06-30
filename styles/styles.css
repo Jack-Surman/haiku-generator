@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cookie&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #e6f3f8;
+  color: #17517e;
+  padding: 0 20px;
+}
+body .heart-logo {
+  width: 100px;
+  height: 100px;
+  background: url("../htdocs/images/cute-hearts.png") no-repeat center/contain;
+}
+body .hdr {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  border-bottom: 2px solid #17517e;
+}
+body .hdr .hdr__text-container .hdr__title {
+  margin: 0;
+  font-size: 35px;
+}
+body .hdr .hdr__text-container .hdr__subTitle {
+  margin: 20px 0;
+  font-size: 25px;
+}
+body .main-content {
+  width: 65%;
+  margin: auto;
+  text-align: center;
+}
+body .main-content .description {
+  font-family: "Roboto", sans-serif;
+}
+body .main-content .description .description__title {
+  font-size: 20px;
+}
+body .main-content .haiku-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: "Roboto", sans-serif;
+  border-bottom: 2px solid #17517e;
+  padding-bottom: 30px;
+}
+body .main-content .haiku-container .haiku__input-container {
+  display: flex;
+  align-items: center;
+  height: 35px;
+  gap: 20px;
+}
+body .main-content .haiku-container .haiku__input-container .haiku__input {
+  border: none;
+  border-bottom: 2px solid #17517e;
+  background: transparent;
+  color: #17517e;
+}
+body .main-content .haiku-container .haiku__input-container .haiku__input:focus {
+  outline: none;
+  border: 2px solid #17517e;
+  border-radius: 3px;
+}
+body .main-content .haiku-container .haiku__input-container .haiku__input[data-valid=true] + .haiku__syllables-output {
+  color: #228B22;
+}
+body .main-content .haiku-container .haiku__input-container .haiku__input[data-valid=false] + .haiku__syllables-output {
+  color: #FF0000;
+}
+body .main-content .haiku-container .haiku__create-btn {
+  width: 35%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  border: 3px solid #17517e;
+  border-radius: 10px;
+  background: transparent;
+  color: #17517e;
+  font-family: "Playfair Display", serif;
+  font-size: 25px;
+  cursor: pointer;
+}
+body .main-content .haiku-container .haiku__create-btn[disabled] {
+  border: 3px solid #CFCFCF;
+  color: #CFCFCF;
+  cursor: not-allowed;
+}
+body .main-content .haiku__output-container[data-active=false] {
+  height: 0;
+}
+body .main-content .haiku__output-container[data-active=false] .haiku__output-header {
+  visibility: hidden;
+}
+body .main-content .haiku__output-container[data-active=true] {
+  min-height: 100px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 10px 10px;
+  margin-top: 20px;
+  border-radius: 10px;
+  border: 2px solid #17517e;
+  color: #ffaad4;
+}
+body .main-content .haiku__output-container[data-active=true] .haiku__output-header {
+  visibility: visible;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 0;
+  border-bottom: 2px dashed #ffaad4;
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+}
+body .main-content .haiku__output-container[data-active=true] .heart-logo-container {
+  display: grid;
+  width: 50px;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+body .main-content .haiku__output-container[data-active=true] .heart-logo-container:first-child {
+  left: 10px;
+}
+body .main-content .haiku__output-container[data-active=true] .heart-logo-container:last-child {
+  right: 10px;
+}
+body .main-content .haiku__output-container[data-active=true] .heart-logo-container .heart-logo {
+  height: 25px;
+  width: 25px;
+}
+body .main-content .haiku__output-container[data-active=true] .heart-logo-container .heart-logo:last-child {
+  width: 200%;
+}
+body .main-content .haiku__output-container[data-active=true] .haiku__output-text-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  font-family: "Cookie", cursive;
+  font-size: 25px;
+}
+
+/*# sourceMappingURL=styles.css.map */

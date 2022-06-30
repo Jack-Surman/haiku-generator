@@ -1,0 +1,188 @@
+@import "_variables";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: $main-bg-color;
+  color: $main-text-color;
+  padding: 0 20px;
+
+  .heart-logo {
+    width: 100px;
+    height: 100px;
+    background: url("../htdocs/images/cute-hearts.png") no-repeat center/contain;
+  }
+
+  .hdr {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    font-family: $main-title-font;
+    border-bottom: 2px solid $main-text-color;
+
+    .hdr__text-container {
+      .hdr__title {
+        margin: 0;
+        font-size: 35px;
+      }
+
+      .hdr__subTitle {
+        margin: 20px 0;
+        font-size: 25px;
+      }
+    }
+  }
+
+  .main-content {
+    width: 65%;
+    margin: auto;
+    text-align: center;
+
+    .description {
+      font-family: $main-body-font;
+
+      .description__title {
+        font-size: 20px;
+      }
+    }
+
+    .haiku-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      font-family: $main-body-font;
+      border-bottom: 2px solid $main-text-color;
+      padding-bottom: 30px;
+
+      .haiku__input-container {
+        display: flex;
+        align-items: center;
+        height: 35px;
+        gap: 20px;
+
+        .haiku__input {
+          border: none;
+          border-bottom: 2px solid $main-text-color;
+          background: transparent;
+          color: $main-text-color;
+
+          &:focus {
+            outline: none;
+            border: 2px solid $main-text-color;
+            border-radius: 3px;
+          }
+
+          &[data-valid="true"] {
+            + .haiku__syllables-output {
+              color: $success-green;
+            }
+          }
+
+          &[data-valid="false"] {
+            + .haiku__syllables-output {
+              color: $error-red;
+            }
+          }
+        }
+      }
+
+      .haiku__create-btn {
+        width: 35%;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        border: 3px solid $main-text-color;
+        border-radius: 10px;
+        background: transparent;
+        color: $main-text-color;
+        font-family: $main-title-font;
+        font-size: 25px;
+        cursor: pointer;
+
+        &[disabled] {
+          border: 3px solid $disabled-grey;
+          color: $disabled-grey;
+          cursor: not-allowed;
+        }
+      }
+    }
+
+    .haiku__output-container {
+      &[data-active="false"] {
+        height: 0;
+
+        .haiku__output-header {
+          visibility: hidden;
+        }
+      }
+
+      &[data-active="true"] {
+        min-height: 100px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 50px 10px 10px;
+        margin-top: 20px;
+        border-radius: 10px;
+        border: 2px solid $main-text-color;
+        color: $secondary-text-color;
+
+        .haiku__output-header {
+          visibility: visible;
+          position: absolute;
+          top: 10px;
+          left: 50%;
+          transform: translateX(-50%);
+          margin: 0;
+          padding: 0;
+          border-bottom: 2px dashed $secondary-text-color;
+          font-family: $main-title-font;
+          font-size: 20px;
+        }
+
+        .heart-logo-container {
+          display: grid;
+          width: 50px;
+          grid-template-rows: repeat(2, 1fr);
+          grid-template-columns: repeat(2, 1fr);
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+
+          &:first-child {
+            left: 10px;
+          }
+
+          &:last-child {
+            right: 10px;
+          }
+
+          .heart-logo {
+            height: 25px;
+            width: 25px;
+
+            &:last-child {
+              width: 200%;
+            }
+          }
+        }
+
+        .haiku__output-text-container {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          gap: 10px;
+          font-family: $secondary-body-font;
+          font-size: 25px;
+        }
+      }
+    }
+  }
+}

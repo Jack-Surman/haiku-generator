@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Haiku Maker</title>
+    <script src="../scripts/main.js" type="module" defer></script>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+<header class="hdr">
+    <span class="heart-logo"></span>
+    <div class="hdr__text-container">
+        <h1 class="hdr__title">Welcome to your personal Haiku assistant</h1>
+        <h2 class="hdr__subTitle">
+            Are you trying to woo a loved one with a heartfelt Haiku but can't quite put the words together?
+        </h2>
+    </div>
+    <span class="heart-logo"></span>
+</header>
+<main class="main-content">
+    <section class="description">
+        <h3 class="description__title">Well you're in luck. With the new Haiku maker, you'll be Rom-Com ready in no
+            time!</h3>
+        <p>It's simple! Enter in your nearly-Haiku, and we'll let you know how many syllables you have.</p>
+        <p>
+            Then, we'll let you know which words you could change by showing you some similar words with a
+            different number of syllables.
+        </p>
+    </section>
+    <section class="haiku-container">
+        <div class="haiku__input-container">
+            <label class="haiku__label" for="inputLine1">You need 5 syllables here:</label>
+            <input class="haiku__input" type="text" name="inputLine1" id="inputLine1"
+                   data-required-syllables="5" data-valid="false"/>
+            <span class="haiku__syllables-output"></span>
+        </div>
+        <div class="haiku__input-container">
+            <label class="haiku__label" for="inputLine2">You need 7 syllables here:</label>
+            <input class="haiku__input" type="text" name="inputLine2" id="inputLine2"
+                   data-required-syllables="7" data-valid="false"/>
+            <span class="haiku__syllables-output"></span>
+        </div>
+        <div class="haiku__input-container">
+            <label class="haiku__label" for="inputLine3">You need 5 syllables here:</label>
+            <input class="haiku__input" type="text" name="inputLine3" id="inputLine3"
+                   data-required-syllables="5" data-valid="false"/>
+            <span class="haiku__syllables-output"></span>
+        </div>
+        <button type="button" class="haiku__create-btn" disabled><strong>Create Your Haiku</strong></button>
+    </section>
+    <section class="haiku__output-container" data-active="false">
+        <div class="heart-logo-container">
+            <span class="heart-logo"></span>
+            <span class="heart-logo"></span>
+            <span class="heart-logo"></span>
+        </div>
+        <h3 class="haiku__output-header">Your Heartfelt Haiku:</h3>
+        <div class="haiku__output-text-container">
+            <em><span class="haiku__output" id="outputLine1"></span></em>
+            <em><span class="haiku__output" id="outputLine2"></span></em>
+            <em><span class="haiku__output" id="outputLine3"></span></em>
+        </div>
+        <div class="heart-logo-container">
+            <span class="heart-logo"></span>
+            <span class="heart-logo"></span>
+            <span class="heart-logo"></span>
+        </div>
+    </section>
+</main>
+</body>
+</html>
